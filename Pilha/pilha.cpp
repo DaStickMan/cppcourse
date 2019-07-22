@@ -3,13 +3,15 @@
 
 using namespace std;
 
-Pilha::Pilha(int max)
+template <class Type>
+Pilha<Type>::Pilha(int max)
 {
-  vet = new int[max];
+  vet = new Type[max];
   max_tam = max - 1;
   topo = -1;
 }
-int Pilha::pop()
+template <class Type>
+Type Pilha<Type>::pop()
 {
   if (topo == -1)
   {
@@ -17,13 +19,14 @@ int Pilha::pop()
   }
   else
   {
-    int value = vet[topo];
+    Type value = vet[topo];
     topo--;
     return value;
   }
-  return 0;
+  return NULL;
 }
-void Pilha::push(int value)
+template <class Type>
+void Pilha<Type>::push(Type value)
 {
   if (topo != max_tam - 1)
   {
@@ -35,7 +38,8 @@ void Pilha::push(int value)
     cout << "Pilha cheia" << endl;
   }
 }
-int Pilha::max()
+template <class Type>
+int Pilha<Type>::max()
 {
   return max_tam;
 }

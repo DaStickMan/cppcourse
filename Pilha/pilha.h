@@ -1,13 +1,14 @@
+template <class Type>
 class Pilha
 {
 private:
-  int *vet;
+  Type *vet;
   int max_tam;
   int topo;
 
 public:
   Pilha(int max);
-  int pop();
-  void push(int value);
+  Type pop();
+  void push(Type value);
   int max();
 };
